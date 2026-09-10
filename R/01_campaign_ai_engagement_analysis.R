@@ -28,6 +28,12 @@ dati <- dati %>%
     sharing = as.numeric(sharing),
     fatturato = as.numeric(`Fatturato in euro`),
     numero_dipendenti = as.numeric(numero_dipendenti),
+    brand = recode(
+      as.character(brand),
+      "CocaCola" = "Coca-Cola",
+      "Ikea" = "IKEA",
+      "Lego" = "LEGO"
+    ),
     brand = as.factor(brand),
     campagna = as.factor(campagna),
     file_type = as.factor(file_type)
@@ -92,12 +98,12 @@ ggplot(dati, aes(x = average_ai)) +
 # ============================================================
 
 colori_brand <- c(
-  "Lego"       = "#F0E442",
+  "LEGO"       = "#F0E442",
   "Zalando"    = "#E69F00",
   "YSL Beauty" = "#000000",
   "Heinz"      = "#009E73",
-  "CocaCola"   = "#D55E00",
-  "Ikea"       = "#0072B2",
+  "Coca-Cola"  = "#D55E00",
+  "IKEA"       = "#0072B2",
   "Patagonia"  = "#56B4E9"
 )
 
@@ -198,7 +204,7 @@ ggplot(
     linewidth = 0.3
   ) +
   geom_text(
-    aes(label = round(media_average_ai, 1)),
+    aes(label = sprintf("%.3f", media_average_ai)),
     hjust = -0.25,
     size = 4
   ) +
@@ -211,7 +217,7 @@ ggplot(
   ) +
   labs(
     title = "Average AI Score medio per brand",
-    subtitle = "Confronto della probabilità media di utilizzo dell’AI generativa",
+    subtitle = "Confronto descrittivo dell'Average AI Score medio tra i brand",
     x = NULL,
     y = "Average AI Score medio"
   ) +
@@ -314,7 +320,7 @@ ai_campagna_grafico <- ai_campagna %>%
     etichetta_barra = paste0(
       acronimo,
       "  ",
-      round(media_average_ai, 1)
+      sprintf("%.3f", media_average_ai)
     )
   )
 
@@ -496,10 +502,16 @@ ggplot(
     outlier.color = "#D55E00",
     outlier.size = 2.2
   ) +
+  scale_x_discrete(
+    labels = c(
+      "image" = "Immagine",
+      "video" = "Video"
+    )
+  ) +
   labs(
     title = "Distribuzione dell’Average AI Score per formato di file",
-    subtitle = "Confronto dei punteggi assegnati ai contenuti in base al formato dell’immagine",
-    x = "Formato del file",
+    subtitle = "Confronto descrittivo dei punteggi in base al formato del contenuto",
+    x = "Formato del contenuto",
     y = "Average AI Score"
   ) +
   theme_minimal(base_size = 12) +
@@ -772,6 +784,13 @@ ggplot(
     color = "grey20",
     linewidth = 1
   ) +
+  scale_y_continuous(
+    labels = scales::label_number(
+      big.mark = ".",
+      decimal.mark = ",",
+      accuracy = 1
+    )
+  ) +
   labs(
     title = "Relazione tra Average AI Score e like",
     subtitle = "Ogni punto rappresenta un contenuto",
@@ -816,11 +835,18 @@ ggplot(
     color = "grey20",
     linewidth = 1
   ) +
+  scale_y_continuous(
+    labels = scales::label_number(
+      big.mark = ".",
+      decimal.mark = ",",
+      accuracy = 1
+    )
+  ) +
   labs(
     title = "Relazione tra Average AI Score ed engagement assoluto",
     subtitle = "Engagement assoluto = like + commenti + condivisioni",
     x = "Average AI Score",
-    y = "Engagement assoluto"
+    y = "Engagement assoluto (numero di interazioni)"
   ) +
   theme_minimal(base_size = 12) +
   theme(
@@ -1057,4 +1083,4 @@ tabella_brand <- dati %>%
   arrange(desc(media_average_ai))
 
 print(tabella_brand)
-#dev.off()
+dev.off()
