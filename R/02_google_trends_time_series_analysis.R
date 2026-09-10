@@ -96,10 +96,10 @@ campagne_date <- tibble(
     "Share a Coke",
     "Breakfast Ketchup",
     "STOCKHOLM 2025",
-    "LEGO Star Wars_Rebuild the Galaxy",
-    "Made Without PFAS_PFAS Free",
+    "LEGO Star Wars - Rebuild the Galaxy",
+    "Made Without PFAS - PFAS Free",
     "MYSLF L’Absolu",
-    "What Do I Wear_SS25"
+    "What Do I Wear - SS25"
   ),
   
   campagna_1 = as.Date(c(
@@ -117,11 +117,11 @@ campagne_date <- tibble(
   # ----------------------------------------------------------
   
   nome_campagna_2 = c(
-    "Feel It All_FIFA World Cup",
+    "Feel It All - FIFA World Cup",
     "The Heinz Dipper",
     "IKEA PS 2026",
     "She Built That",
-    "Human Powered_Worn Wear Snow Tour",
+    "Human Powered - Worn Wear Snow Tour",
     "Libre Berry Crush",
     "Lily Collins"
   ),
@@ -505,7 +505,7 @@ grafico_campagna_specifica <- function(
       
       x = "Data",
       
-      y = "Google Trends"
+      y = "Indice Google Trends (0–100)"
     ) +
     
     theme_bw(
@@ -929,7 +929,7 @@ analisi_ts_brand <- function(brand_name) {
       
       x = "Data",
       
-      y = "Google Trends",
+      y = "Indice Google Trends (0–100)",
       
       colour = NULL
     ) +
@@ -1174,7 +1174,7 @@ analisi_ts_brand <- function(brand_name) {
       
       x = NULL,
       
-      y = "Google Trends",
+      y = "Indice Google Trends (0–100)",
       
       fill = NULL,
       
@@ -1247,7 +1247,7 @@ analisi_ts_brand <- function(brand_name) {
       
       x = "Mese",
       
-      y = "Google Trends"
+      y = "Indice Google Trends (0–100)"
     ) +
     
     theme_bw(
