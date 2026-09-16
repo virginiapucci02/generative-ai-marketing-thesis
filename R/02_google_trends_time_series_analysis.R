@@ -1892,3 +1892,27 @@ for (b in brand_list) {
 }
 
 dev.off()
+
+# =============================================================================
+# FONTI E DICHIARAZIONE SULL'USO DI STRUMENTI DI INTELLIGENZA ARTIFICIALE
+# =============================================================================
+
+# Fonti:
+# Lo script è stato sviluppato facendo riferimento alla documentazione ufficiale
+# di R e dei pacchetti utilizzati. Per le analisi delle serie temporali,
+# incluse media mobile, decomposizione STL, ACF, PACF e test ADF, sono stati
+# inoltre utilizzati i riferimenti metodologici citati nel testo della tesi
+# e nella relativa bibliografia, in particolare Hyndman e Athanasopoulos
+# per l'analisi e l'interpretazione delle serie temporali.
+
+# Dichiarazione sull'uso di strumenti di AI:
+# Strumenti di intelligenza artificiale generativa sono stati utilizzati come
+# supporto alla comprensione, revisione, debugging e riorganizzazione del codice,
+# nonché per migliorarne la leggibilità, la documentazione e alcune
+# visualizzazioni.
+# Le scelte metodologiche, la definizione delle finestre temporali,
+# l'adattamento del codice ai dati Google Trends, l'esecuzione delle analisi,
+# il controllo degli output e l'interpretazione dei risultati sono stati
+# verificati dall'autrice.
+# Gli strumenti di AI non sono stati utilizzati per generare o alterare
+# artificialmente i dati analizzati.
