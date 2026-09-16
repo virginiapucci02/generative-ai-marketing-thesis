@@ -1084,3 +1084,26 @@ tabella_brand <- dati %>%
 
 print(tabella_brand)
 dev.off()
+
+# =============================================================================
+# FONTI E DICHIARAZIONE SULL'USO DI STRUMENTI DI INTELLIGENZA ARTIFICIALE
+# =============================================================================
+
+# Fonti:
+# Lo script è stato sviluppato facendo riferimento alla documentazione ufficiale
+# di R e dei pacchetti utilizzati. Per la costruzione dell'Engagement Index e
+# per le analisi statistiche sono stati inoltre utilizzati i riferimenti
+# metodologici citati nel testo della tesi e nella relativa bibliografia,
+# in particolare quelli relativi alla costruzione di indicatori compositi
+# e alla correlazione di rango di Spearman.
+
+# Dichiarazione sull'uso di strumenti di AI:
+# Strumenti di intelligenza artificiale generativa sono stati utilizzati come
+# supporto alla comprensione, revisione, debugging e riorganizzazione del codice,
+# nonché per migliorarne la leggibilità, la documentazione e alcune
+# visualizzazioni.
+# Le scelte metodologiche, l'adattamento del codice ai dati, l'esecuzione delle
+# analisi, il controllo degli output e l'interpretazione dei risultati sono stati
+# verificati dall'autrice.
+# Gli strumenti di AI non sono stati utilizzati per generare o alterare
+# artificialmente i dati analizzati.
